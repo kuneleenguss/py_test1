@@ -3,9 +3,11 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver import ActionChains
 import time
+import os
 
-service = webdriver.ChromeService(executable_path="D:\VSC Projects\py_test1\chromedriver-win64\chromedriver.exe")
+dir = os.path.dirname(__file__)
 
+service = webdriver.ChromeService(executable_path="{}\chromedriver-win64\chromedriver.exe".format(dir))
 driver = webdriver.Chrome(service=service)
 
 driver.get(url="https://www.gismeteo.ru/")
